@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador de misiones planetarias — Árbol hiperbólico</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/d3-hypertree@1.1.3/dist/d3-hypertree-light.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3-hypertree@1.1.3/dist/d3-hypertree.min.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="eyebrow">VISUALIZACIÓN JERÁRQUICA · EXPLORACIÓN ESPACIAL</div>
+    <h1>Explorador de misiones planetarias</h1>
+    <p class="subtitle">Explora las relaciones entre misiones, naves espaciales e instrumentos científicos.</p>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Controles y filtros del catálogo">
+      <section class="sidebar-section" aria-label="Navegación por misiones">
+        <h2 class="section-title">Explora las misiones</h2>
+        <p class="section-hint">Empieza por una misión conocida. Después, pulsa los nodos del árbol para profundizar en sus naves e instrumentos.</p>
+        <button id="home-button" class="secondary overview-button" type="button">Ver todas las misiones</button>
+        <nav id="mission-list" class="mission-list" aria-label="Lista de misiones">
+          <p class="loading-missions">Cargando misiones…</p>
+        </nav>
+      </section>
+
+      <section class="sidebar-section legend-section" aria-label="Leyenda de niveles">
+        <h2 class="section-title">Niveles del árbol</h2>
+        <span class="legend-item"><span class="dot mission"></span>Misión</span>
+        <span class="legend-item"><span class="dot spacecraft"></span>Nave espacial</span>
+        <span class="legend-item"><span class="dot instrument"></span>Instrumento</span>
+        <span class="legend-item"><span class="dot root"></span>Raíz del catálogo</span>
+      </section>
+    </aside>
+
+    <section class="visualization-panel" aria-label="Visualización del árbol hiperbólico">
+      <div id="canvas-container" aria-label="Árbol hiperbólico de misiones planetarias"></div>
+      <footer>
+        <p id="status" role="status">Cargando catálogo…</p>
+        <p class="source-note">Datos: catálogo de misiones planetarias seleccionado para esta práctica. Algunas referencias de instrumentos pueden no estar disponibles en la fuente original.</p>
+      </footer>
+    </section>
+
+    <aside class="detail-sidebar" aria-label="Información del elemento seleccionado">
+      <section class="sidebar-section detail-section" aria-live="polite">
+        <h2 class="section-title">Explorar elemento</h2>
+        <div id="detail-card" class="detail-card">
+          <p class="detail-placeholder">Pulsa una misión, nave o instrumento del árbol para consultar su información.</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+</body>
+</html>

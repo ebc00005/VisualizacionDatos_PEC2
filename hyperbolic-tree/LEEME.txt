@@ -1,0 +1,12 @@
+INSTALACIÓN
+1. Copia misiones_jerarquia.json junto a index.html.
+2. Abre la carpeta con VS Code y ejecuta index.html con Live Server.
+3. Si los colores de nodos aún no aparecen, abre la consola del navegador y comprueba errores de D3-Hypertree. Esta versión configura tanto nodeColor como fill/stroke para compatibilidad entre capas.
+
+MEJORAS
+- Capa de celdas de Voronoi desactivada para evitar grandes manchas de color.
+- Radio de nodos reducido para dejar visibles las conexiones y etiquetas.
+- Color explícito por profundidad y resaltado de la ruta del nodo seleccionado.
+- Panel de información al seleccionar una misión, nave o instrumento.
+- Descripción breve e imagen ilustrativa enlazada a NASA para las misiones con recurso identificado.
+- La información se muestra en el lateral; los instrumentos no tienen descripciones científicas individuales en el catálogo disponible.
