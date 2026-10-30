@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explorador interactivo de misiones planetarias según familia y destino.">
+  <title>Explorador de misiones planetarias — Sunburst</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <div class="eyebrow">VISUALIZACIÓN JERÁRQUICA · EXPLORACIÓN ESPACIAL</div>
+    <h1>Misiones planetarias según familia y destino</h1>
+    <p class="subtitle">Explora las relaciones entre las misiones espaciales y los cuerpos celestes que investigan.</p>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Controles e información">
+      <section class="sidebar-section">
+        <h2 class="section-title">Explora las familias</h2>
+        <p class="section-hint">El gráfico comienza con una vista general. Selecciona una familia para descubrir sus destinos y continúa profundizando para consultar las misiones.</p>
+        <button id="home-button" class="secondary" type="button">Ver todas las familias</button>
+        <div id="family-list" class="family-list" aria-label="Familias de destinos">
+          <p class="loading">Cargando familias…</p>
+        </div>
+      </section>
+
+    </aside>
+
+    <section class="visualization-panel" aria-label="Sunburst de misiones planetarias">
+      <div id="sunburst" role="img" aria-label="Gráfico radial interactivo de familias, destinos y misiones"></div>
+      <footer>
+        <p id="status" role="status">Cargando datos…</p>
+        <p class="source-note">La magnitud representa asociaciones entre misiones y destinos. Una misión con varios destinos puede aparecer en más de una rama.</p>
+      </footer>
+    </section>
+
+    <aside class="info-sidebar" aria-label="Información y leyenda">
+      <section class="sidebar-section" aria-live="polite">
+        <h2 class="section-title">Explorar elemento</h2>
+        <div id="detail-card" class="detail-card">
+          <p class="detail-placeholder">Selecciona una familia, un destino o una misión para consultar sus detalles.</p>
+        </div>
+      </section>
+
+    </aside>
+  </main>
+</body>
+</html>
